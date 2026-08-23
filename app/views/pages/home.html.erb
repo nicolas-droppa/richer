@@ -1,5 +1,6 @@
 <h1>Richer</h1>
 <p>Finance tracker</p>
+<%= current_user.inspect %>
 
 <% if user_signed_in? %>
     <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
