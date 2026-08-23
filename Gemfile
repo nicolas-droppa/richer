@@ -70,5 +70,3 @@ group :test do
 end
 
 gem "fiddle"
-
-gem "bcrypt", "~> 3.1"
