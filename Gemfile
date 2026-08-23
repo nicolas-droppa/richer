@@ -70,3 +70,5 @@ group :test do
 end
 
 gem "fiddle"
+
+gem "devise", "~> 5.0"
