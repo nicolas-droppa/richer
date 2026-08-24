@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Transactions</h1>
 
 <div id="transactions">
   <% @transactions.each do |transaction| %>
-    <%= render transaction %>
-    <p>
-      <%= link_to "Show this transaction", transaction %>
-    </p>
+    <%= link_to transaction, class: 'text-black text-decoration-none' do %>
+      <%= render transaction %>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New transaction", new_transaction_path %>
+<div class='d-grid fixed-bottom p-4'>
+  <%= link_to "Log", new_transaction_path, class: 'btn btn-primary py-3 rounded-pill shadow fs-6 fw-bold' %>
+</div>
