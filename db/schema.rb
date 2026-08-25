@@ -10,14 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2026_08_25_141131) do
+=======
+ActiveRecord::Schema[7.1].define(version: 2026_08_23_100317) do
+>>>>>>> add-transaction-RA-76
   create_table "transactions", force: :cascade do |t|
     t.string "title"
     t.integer "kind", default: 0, null: false
     t.float "amount", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer "user_id"
+=======
+>>>>>>> add-transaction-RA-76
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,32 @@
+<%= form_with(model: transaction, class: 'mz-2 row g-3') do |form| %>
+  <% if transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :kind, class: 'form-label' %>
+    <%= form.select :kind, Transaction.kinds.keys.map { |key| [key.titleize, key] }, {}, class: 'form-select' %>
+  </div>
+
+  <div>
+    <%= form.label :amount, class: 'form-label' %>
+    <%= form.number_field :amount, step: 0.01, min: 0, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
