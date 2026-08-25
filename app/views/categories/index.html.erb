@@ -1,0 +1,13 @@
+<h1><%= t '.header' %></h1>
+
+<div id="categories">
+  <% @categories.each do |transaction| %>
+    <%= link_to transaction, class: 'text-black text-decoration-none' do %>
+      <%= render transaction %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class='d-grid fixed-bottom p-4'>
+  <%= link_to t('.new'), new_transaction_path(), class: 'btn btn-primary py-3 rounded-pill shadow fs-6 fw-bold' %>
+</div>

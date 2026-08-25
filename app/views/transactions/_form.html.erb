@@ -1,7 +1,7 @@
-<%= form_with(model: transaction, class: 'mz-2 row g-3') do |form| %>
+<%= form_with(model: transaction, class: 'mt-2 row g-3') do |form| %>
   <% if transaction.errors.any? %>
     <div style="color: red">
-      <h2><%= t 'messages.errors' %></h2>
+      <h2><%= t 'messages.errors'%></h2>
 
       <ul>
         <% transaction.errors.each do |error| %>
@@ -24,6 +24,18 @@
   <div>
     <%= form.label :amount, class: 'form-label' %>
     <%= form.number_field :amount, step: 0.01, min: 0, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :category, class: 'form-label' %>
+    <div>
+      <% current_user.categories.each do |category| %>
+        <%= form.radio_button :category_id, category.id, class: 'btn-check' %>
+        <%= form.label "category_id_#{category.id}", class: "btn btn-outline-#{category.color} rounded-3" do %>
+          <i class='bi bi-<%= category.icon %>'></i>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div>

@@ -1,0 +1,45 @@
+<%= form_with(model: category) do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class='mt-2'>
+    <%= form.label :color, class: 'form-label' %>
+    <div class='d-flex gap-1'>
+      <% Category.colors.keys.each do |key| %>
+        <%= form.radio_button :color, key, class: 'btn-check ' %>
+        <%= form.label "color_#{key}", class: "btn btn-outline-#{key} rounded-3 p-3" do %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='mt-2'>
+    <%= form.label :icon, class: 'form-label' %>
+
+    <div class='d-flex gap-1 flex-wrap'>
+      <% Category.icons.keys.each do |key| %>
+        <%= form.radio_button :icon, key, class: 'btn-check' %>
+        <%= form.label "icon_#{key}", class: "btn btn-outline-secondary rounded-3" do %>
+          <i class="bi bi-<%= key %>"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='mt-3'>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

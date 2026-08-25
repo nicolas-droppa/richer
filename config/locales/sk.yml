@@ -43,6 +43,14 @@ sk:
     submit:
       create: 'Vytvoriť'
       update: 'Uložiť'
+  categories:
+    index:
+      header: 'Kategórie'
+    new:
+      header: 'Nová kategória'
+      link_back: 'Kategórie'
+    edit:
+      header: 'Úprava kategórie'
   home:
     header: 'Ahoooj!'
   transactions:

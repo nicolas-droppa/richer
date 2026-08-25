@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope '(:locale)' do
+    resources :categories
     resources :transactions
     devise_for :users
   end
