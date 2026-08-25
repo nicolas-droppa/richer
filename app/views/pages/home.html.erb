@@ -1,4 +1,12 @@
-<h1>Richer</h1>
-<p><%= t('.description') %></p>
+<% if user_signed_in? %>
+  <h1><%= t '.welcome', name: current_user.given_name %></h1>
+<% end %>
+<p><%= t '.description' %></p>
+<h2>Total spending:</h2>
+<%= @presenter.spending_summary %><br />
+Average transaction: <%= @presenter.average_transaction %>
 
-<%= t('home.header') %>
+<h2>Categories:</h2>
+<% @presenter.categories.each do |category| %>
+  <%= category.title %> - <%= @presenter.sum_for_category(category) %><br />
+<% end %>
