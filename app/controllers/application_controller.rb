@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   around_action :wrap_with_locale
 
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
   private
 
   def wrap_with_locale(&action)

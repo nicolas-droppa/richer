@@ -1,8 +1,8 @@
-<%= render 'shared/link_back', path: transactions_path, text: 'Transactions' %>
+<%= render 'shared/link_back', path: transactions_path, text: t('.link_back') %>
 <%= render @transaction %>
 
 <div class='d-flex gap-2 mt-3 text-nowrap flex-wrap'>
-  <%= link_to "Edit", edit_transaction_path(@transaction), class: 'btn btn-outline-primary' %>
+  <%= link_to t('.edit'), edit_transaction_path(@transaction), class: 'btn btn-outline-primary' %>
 
-  <%= button_to "Delete", @transaction, method: :delete, class: 'btn btn-outline-danger' %>
+  <%= button_to t('.destroy'), @transaction, method: :delete, class: 'btn btn-outline-danger' %>
 </div>

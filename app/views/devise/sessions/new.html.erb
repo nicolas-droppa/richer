@@ -1,6 +1,6 @@
 <section class="row min-vh-100 align-items-center">
   <div class="col-12">
-    <h2 class="text-center">Log in</h2>
+    <h2 class="text-center"><%= t '.login' %></h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "mt-2 row g-3"}) do |f| %>
       <div class="field">
@@ -21,7 +21,7 @@
       <% end %>
 
       <div class="d-grid mt-4">
-        <%= f.submit "Log in", class: 'btn btn-primary' %>
+        <%= f.submit t('.login'), class: 'btn btn-primary' %>
       </div>
     <% end %>
 

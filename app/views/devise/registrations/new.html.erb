@@ -1,6 +1,6 @@
 <section class="row min-vh-100 align-items-center">
   <div class="col-12">
-    <h2 class="text-center">Sign up</h2>
+    <h2 class="text-center"><%= t('.header') %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "mt-2 row"}) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -23,7 +23,7 @@
       <div class="field">
         <p><%= f.label :password, class: 'form-label' %></p>
         <% if @minimum_password_length %>
-          <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>
+          <p><em>(<%= t('.minimum_password_length', count: @minimum_password_length) %>)</em></p>
         <% end %>
         <p><%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %></p>
       </div>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="d-grid mt-4">
-        <%= f.submit "Sign up", class: 'btn btn-primary' %>
+        <%= f.submit t('.register'), class: 'btn btn-primary' %>
       </div>
     <% end %>
 

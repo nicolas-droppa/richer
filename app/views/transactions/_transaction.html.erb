@@ -3,11 +3,11 @@
 
   <% if transaction.expense? %>
     <span class='text-danger'>
-      <%= number_to_euros(transaction.amount) %>
+      <%= number_to_currency transaction.amount %>
     </span>
   <% else %>
     <span class='text-success'>
-      <%= number_to_euros(transaction.amount) %>
+      <%= number_to_currency transaction.amount %>
     </span>
   <% end %>
 

@@ -1,7 +1,7 @@
 <%= form_with(model: transaction, class: 'mz-2 row g-3') do |form| %>
   <% if transaction.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <h2><%= t 'messages.errors' %></h2>
 
       <ul>
         <% transaction.errors.each do |error| %>
@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :kind, class: 'form-label' %>
-    <%= form.select :kind, Transaction.kinds.keys.map { |key| [key.titleize, key] }, {}, class: 'form-select' %>
+    <%= form.select :kind, Transaction.kinds.keys.map { |key| [Transaction.human_attribute_name("kind.#{key}"), key] }, {}, class: 'form-select' %>
   </div>
 
   <div>

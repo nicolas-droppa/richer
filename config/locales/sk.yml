@@ -1,5 +1,103 @@
 sk:
+  activerecord:
+    attributes:
+      transaction:
+        title: 'Názov'
+        kind: 'Druh'
+        amount: 'Cena'
+      transaction/kind:
+        expense: 'Výdaj'
+        income: 'Príjem'
+      user:
+        email: 'E-mail'
+        given_name: 'Meno'
+        family_name: 'Priezvisko'
+        password: 'Heslo'
+        password_confirmation: 'Potvrdenie hesla'
+  messages:
+    errors: 'Je potrebné opraviť chyby:'
+  number:
+    currency:
+      format:
+        unit: '€'
+        separator: ','
+        delimiter: ' '
+        format: '%n %u'
+        strip_insignificant_zeros: true
+  errors:
+    attributes:
+      email:
+        blank: 'nesmie byť prázdny.'
+      password:
+        blank: 'nesmie byť prázdne.'
+        too_short: 'je príliš krátke.'
+      password_confirmation:
+        confirmation: 'nesmie byť prázdne.'
+      title:
+        blank: 'nesmie byť prázdny.'
+      amount:
+        greater_than: 'musí byť väčšia ako %{count}.'
+    messages:
+      not_found: "nebol nájdený"
+  helpers:
+    submit:
+      create: 'Vytvoriť'
+      update: 'Uložiť'
   home:
-    header: 'Ahooj!'
+    header: 'Ahoooj!'
   transactions:
-    hreader: 'Tranzakcie'
+    index:
+      header: 'Transakcie'
+      new: 'Zaznamenať'
+    new:
+      header: 'Nová transakcia'
+      link_back: 'Transakcie'
+    edit:
+      header: 'Úprava transakcie'
+    show:
+      link_back: 'Transakcie'
+      edit: 'Upraviť'
+      destroy: 'Odstrániť'
+  shared:
+    navbar:
+      home: 'Domov'
+      transactions: 'Transakcie'
+      login: 'Prihlásenie'
+      register: 'Registrácia'
+      logout: 'Odhlásiť sa'
+  pages:
+    home:
+      welcome: 'Vitaj späť, %{name}'
+      description: 'Pomocník pre trackovanie financií'
+  devise:
+    failure:
+      already_authenticated: "Už si prihlásený."
+      invalid: "Nesprávny %{authentication_keys} alebo heslo."
+      not_found_in_database: "Nesprávny %{authentication_keys} alebo heslo."
+      timeout: "Bol si odhlásený z dôvodu neaktivity. Prosím, prihlás sa znovu."
+      unauthenticated: "Pred pokračovaním sa potrebuješ prihlásiť"
+    passwords:
+      updated: "Tvoje heslo bolo úspešne zmenené. Si prihlásený."
+    registrations:
+      destroyed: "Tvoj účet bol úspešne zrušený. Snáď nabudúce."
+      signed_up: "Vitaj! Registrácia bola úspešná."
+      updated: "Zmeny v účte boli uložené."
+      updated_but_not_signed_in: "Zmeny boli uložené. Kvôli zmene hesla sa, prosím, prihlás opäť."
+      new:
+        header: 'Registrácia'
+        register: 'Registrovať sa'
+        minimum_password_length: 'minimálne %{count} znakov'
+    sessions:
+      signed_in: "Úspešne prihlásený."
+      signed_out: "Úspešne odhlásený."
+      already_signed_out: "Úspešne odhlásený."
+      new:
+        login: 'Prihlásiť sa'
+    shared:
+      links:
+        register: 'Zaregistrovať sa'
+        login: 'Prihlásiť sa'
+        forgot_password: 'Zabudol si heslo?'
+        confirmation_instructions: 'Nedostal si pokyny na potvrdenie účtu?'
+        unlock_instructions: 'Nedostal si pokyny na odomknutie účtu?'
+        omniauth: 'Prihlásiť sa cez %{provider}'
