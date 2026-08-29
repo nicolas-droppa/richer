@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :validatable
   validates :given_name, :family_name, presence: true
+
+  def full_name
+    "#{given_name} #{family_name}"
+  end
 end
